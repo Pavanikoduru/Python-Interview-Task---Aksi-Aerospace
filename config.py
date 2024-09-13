@@ -1,5 +1,7 @@
+import os
+
 class Config:
-    SECRET_KEY = 'your_secret_key_here'
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'
-    JWT_SECRET_KEY = 'your_jwt_secret_key_here'
+    SECRET_KEY = os.getenv('SECRET_KEY', 'your_secret_key')
+    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'your_jwt_secret_key')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite'
 
